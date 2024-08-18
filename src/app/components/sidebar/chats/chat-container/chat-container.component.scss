@@ -1,0 +1,21 @@
+.container
+{
+    width: 30vw;
+    height: 100vh;
+    background-color: #f0f8ff;
+    margin-left:2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+mat-list{
+    width: 100%;
+}
+app-search-bar
+{
+    width: 90%;
+}
+h2{
+    font-weight: 400;
+}

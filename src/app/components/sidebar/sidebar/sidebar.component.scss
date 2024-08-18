@@ -1,0 +1,29 @@
+.sidenav-container {
+    height: 100vh;
+    background-color: transparent;
+  }
+  
+  .sidenav {
+    width: 8rem;
+    background-color: #6E00FF;
+    border-radius: 0 1rem 1rem 0;
+  }
+  
+  .nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+  }
+  
+  .mat-icon {
+    color: white;
+  }
+  
+  .nav-item:hover {
+    background-color: #612DD1;
+  }
+  
+  .nav-item.active {
+    background-color: #612DD1;
+  }
