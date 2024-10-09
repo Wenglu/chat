@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
-import * as data from '../../assests/messages.json';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
@@ -16,17 +15,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './conversation.component.scss'
 })
 export class ConversationComponent {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/users';
+  private messagesJson = 'https://jsonplaceholder.typicode.com/users';
   private http = inject(HttpClient);
   messages: any[] = [];
 
   constructor() {
-    console.log(data);
     this.fetchData();
   }
 
   fetchData() {
-    this.http.get<any[]>(this.apiUrl).subscribe({
+    this.http.get<any[]>(this.messagesJson).subscribe({
       next: (response) => {
         this.messages = response;
         console.log(response);
