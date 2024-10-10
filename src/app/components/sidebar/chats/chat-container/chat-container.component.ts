@@ -11,6 +11,15 @@ import { ConversationComponent } from '../../../conversation/conversation.compon
   templateUrl: './chat-container.component.html',
   styleUrl: './chat-container.component.scss'
 })
-export class ChatContainerComponent {
+export class ContainerComponent {
+  currentSearchTerm: string = '';
+  filteredMessages: any[] = [];
 
+  onSearchTermChange(searchTerm: string) {
+    this.currentSearchTerm = searchTerm;
+  }
+
+  onSearchResultsChange(results: any[]) {
+    this.filteredMessages = results;
+  }
 }

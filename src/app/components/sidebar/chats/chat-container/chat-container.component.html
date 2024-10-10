@@ -1,8 +1,13 @@
 <div class="container">
-    <app-search-bar></app-search-bar>
-    <mat-list>
-        <mat-divider></mat-divider>
-        <app-conversation></app-conversation>
-      </mat-list>
+  <app-search-bar
+    (searchTermChange)="onSearchTermChange($event)"
+    (searchResults)="onSearchResultsChange($event)">
+  </app-search-bar>
+  <mat-list>
+    <mat-divider></mat-divider>
+    <app-conversation
+      [searchTerm]="currentSearchTerm"
+      [filteredMessages]="filteredMessages">
+    </app-conversation>
+  </mat-list>
 </div>
-
