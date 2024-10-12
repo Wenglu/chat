@@ -1,25 +1,30 @@
-.sidenav-container {
-    height: 100vh;
-    background-color: transparent;
-  }
-  
-  .sidenav {
-    width: 8rem;
-    background-color: #2a2a2a;
-    border-radius: 0 1rem 1rem 0;
-  }
-  
-  .nav-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 5rem;
-  }
-  
-  .mat-icon {
-    color: white;
-  }
-  
-  .nav-item:hover {
-    background-color: #222222ff;
-  }
+::ng-deep .sidenav-container {
+  height: 100vh;
+  background-color: #44474e !important;
+  box-shadow: 0 0 15px rgb(37, 37, 37) !important;
+  border-radius: 0 1rem 1rem 0 !important;
+}
+
+::ng-deep .sidenav {
+  width: 8rem !important;
+  background-color: #2a2a2a !important;
+}
+
+::ng-deep .nav-item {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 5rem !important;
+  transition: background-color 0.3s ease !important;
+}
+
+::ng-deep .mat-icon {
+  color: white !important;
+}
+::ng-deep .nav-item:hover {
+  background-color: #222222 !important;
+}
+
+::ng-deep .mat-mdc-list-item-interactive::before {
+  background-color: transparent !important;
+}

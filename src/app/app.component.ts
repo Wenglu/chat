@@ -4,11 +4,12 @@ import { SidebarComponent } from './components/sidebar/sidebar/sidebar.component
 import { ContainerComponent } from "./components/sidebar/chats/chat-container/chat-container.component";
 import { ConversationsService } from './services/conversations.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MessagesComponent } from './components/sidebar/messages/messages/messages.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SidebarComponent, ContainerComponent,HttpClientModule],
+  imports: [RouterOutlet, SidebarComponent, ContainerComponent,HttpClientModule,MessagesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

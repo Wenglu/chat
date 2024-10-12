@@ -10,3 +10,14 @@ main
     display: flex;
     align-items: center;
 }
+.message-box
+{   
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+app-messages{
+    width: 100%;
+}
