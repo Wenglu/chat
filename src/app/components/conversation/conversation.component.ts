@@ -2,7 +2,7 @@ import { Component, inject ,Input,SimpleChanges ,OnChanges} from '@angular/core'
 import { MatListModule } from '@angular/material/list';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { ConversationsService } from '../../../services/conversations.service';
+import { ConversationsService } from '../../services/conversations.service';
 
 @Component({
   selector: 'app-conversation',
