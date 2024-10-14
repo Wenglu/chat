@@ -1,12 +1,73 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 .container {
-    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
     background-color: #2a2a2a;
     border-radius: 1rem 0 0 1rem;
-    display: flex;
-
     color: white;
     box-shadow: 0 0 15px rgb(37, 37, 37);
 }
 app-navbar{
+    width: 100%;
+}
+.messages {
+    flex-grow: 1;
+    overflow-y: scroll;
+    overflow-y: none;
+}
+.inputContainer
+{
+    height: 10rem;
+    padding-left: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    input{
+        width: 90%;
+        height: 3rem;
+        background-color: #1b1b1b;
+        border: 1px solid transparent;
+        border-radius: 3rem;
+        padding-left:2rem ;
+        font-size: 1.2em;
+        outline: none;
+        color:aliceblue;
+    }
+    mat-icon{
+        margin-inline: 2rem;
+        font-size:2em;
+        width:2rem;
+        height:2rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #bb86fc;
+        padding: 0.2em;
+        border-radius: 1rem;
+    }
+}
+app-user-message{
     width: 100%;
 }

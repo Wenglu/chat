@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-items: center;
+
+    p{
+        box-shadow: 0 0 5px rgb(14, 14, 14);
+        padding-inline: 1em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        border-radius: 3rem;
+        }
+    .avatar{
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        border-radius: 50%;
+    }
+    .imageMessage{
+        padding-top: 1rem;
+    }
+
+    &.owner{
+        flex-direction: row-reverse;
+    }
+}
