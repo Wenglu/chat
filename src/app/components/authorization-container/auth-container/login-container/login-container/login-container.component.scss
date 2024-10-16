@@ -1,0 +1,98 @@
+.container
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login
+{
+    width: 450px; // do zmiany przy responsywności!
+    height: 50vh;
+    background-color: #1b1b1b;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px #1b1b1b;
+}
+.photoContainer
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(240, 248, 255, 0.575);
+    
+    
+    mat-icon{
+        font-size: 3rem;
+        width: 3rem;
+        height: 3rem;
+        transition: color 0.3s ease, transform 0.3s ease; 
+    }
+    mat-icon:hover{
+        color: aliceblue;
+        cursor: pointer;
+    }
+}
+.custom-input {
+    input{
+        color:aliceblue !important ;
+    }
+  }
+
+  ::ng-deep {
+    .mat-mdc-text-field-wrapper {
+        background-color: transparent !important;
+    }
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after  {
+        border-bottom-color: rgb(191, 0, 255) !important;
+    }
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+        border-bottom-color: rgba(240, 248, 255, 0.623) !important;
+      }
+    .mdc-text-field .mdc-floating-label{
+        color: rgba(240, 248, 255, 0.575) !important;
+    }
+    .mdc-text-field:hover .mdc-floating-label {
+      color: rgba(240, 248, 255) !important;
+    }
+
+    .mdc-text-field--focused .mdc-floating-label {
+      color: rgba(240, 248, 255) !important;
+    }
+  }
+
+  .custom-button {
+
+    width: 50%;
+    font-size: 1.1rem;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    color: aliceblue;
+    cursor: not-allowed;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  
+    &:not([disabled]) {
+        background-color: rgb(204, 49, 255);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    
+        &:hover {
+          background-color: rgb(191, 0, 255);
+        }
+      }
+  }
+  .info{
+    color: rgba(240, 248, 255, 0.575);
+  }
+  a{
+    text-decoration: none;
+    color: rgba(240, 248, 255, 1);
+  }

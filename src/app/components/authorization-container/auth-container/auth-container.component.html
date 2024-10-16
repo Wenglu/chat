@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="register">
+
+        <form>
+            <mat-form-field class="custom-input">
+              <mat-label>Imię</mat-label>
+              <input type="text" matInput>         
+            </mat-form-field>
+        </form>
+
+        <form>
+            <mat-form-field class="custom-input">
+              <mat-label>Nazwisko</mat-label>
+              <input type="text" matInput>         
+            </mat-form-field>
+        </form>
+
+        <form>
+            <mat-form-field class="custom-input">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput>         
+            </mat-form-field>
+        </form>
+        <div class="photoContainer">
+            <p>Wybierz zdjęcie profilowe</p>
+            <label for="profilePicUpload" class="upload-label">
+              <mat-icon>image</mat-icon>
+              <input type="file" id="profilePicUpload" hidden />
+            </label>
+        </div>
+        <button mat-button disabled class="custom-button">Zarejestruj się</button>
+        <p class="info">Masz już konto? <a href=""> Zaloguj się</a></p>
+    </div>
+</div>
