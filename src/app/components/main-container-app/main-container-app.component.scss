@@ -1,0 +1,22 @@
+main
+{
+    height: 100vh;
+    width: 100vw;
+    background-color: #474747;
+}
+.container
+{
+    display: flex;
+    align-items: center;
+}
+.message-box
+{   
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+app-messages{
+    width: 100%;
+}

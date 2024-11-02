@@ -7,10 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MessagesComponent } from './components/sidebar/messages/messages/messages.component';
 import { AuthContainerComponent } from './components/authorization-container/auth-container/auth-container.component';
 import { LoginContainerComponent } from './components/authorization-container/auth-container/login-container/login-container/login-container.component';
+import { MainContainerAppComponent } from './components/main-container-app/main-container-app.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,LoginContainerComponent,AuthContainerComponent, SidebarComponent, ContainerComponent,HttpClientModule,MessagesComponent],
+  imports: [RouterOutlet,LoginContainerComponent,AuthContainerComponent,MainContainerAppComponent, SidebarComponent, ContainerComponent,HttpClientModule,MessagesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
