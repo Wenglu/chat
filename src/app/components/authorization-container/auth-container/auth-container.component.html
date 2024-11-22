@@ -1,34 +1,66 @@
 <div class="container">
-    <div class="register">
-
-        <form>
-            <mat-form-field class="custom-input">
+  <div class="register">
+      <form (ngSubmit)="onSubmit($event)">
+          <mat-form-field class="custom-input">
               <mat-label>Imię</mat-label>
-              <input type="text" matInput>         
-            </mat-form-field>
-        </form>
+              <input 
+                  type="text" 
+                  matInput 
+                  [(ngModel)]="userData.firstName" 
+                  name="firstName" 
+                  required>
+          </mat-form-field>
 
-        <form>
-            <mat-form-field class="custom-input">
+          <mat-form-field class="custom-input">
               <mat-label>Nazwisko</mat-label>
-              <input type="text" matInput>         
-            </mat-form-field>
-        </form>
+              <input 
+                  type="text" 
+                  matInput 
+                  [(ngModel)]="userData.lastName" 
+                  name="lastName" 
+                  required>
+          </mat-form-field>
 
-        <form>
-            <mat-form-field class="custom-input">
+          <mat-form-field class="custom-input">
               <mat-label>Email</mat-label>
-              <input type="email" matInput>         
-            </mat-form-field>
+              <input 
+                  type="email" 
+                  matInput 
+                  [(ngModel)]="userData.email" 
+                  name="email" 
+                  required>
+          </mat-form-field>
+
+          <mat-form-field class="custom-input">
+              <mat-label>Hasło</mat-label>
+              <input 
+                  type="password" 
+                  matInput 
+                  [(ngModel)]="userData.password" 
+                  name="password" 
+                  required>
+          </mat-form-field>
+
+          <div class="photoContainer">
+              <p>Wybierz zdjęcie profilowe</p>
+              <label for="profilePicUpload" class="upload-label">
+                  <mat-icon>image</mat-icon>
+                  <input 
+                      type="file" 
+                      id="profilePicUpload" 
+                      (change)="onFileSelected($event)" 
+                      hidden />
+              </label>
+          </div>
+
+          <button 
+              mat-button 
+              type="submit" 
+              class="custom-button">
+              Zarejestruj się
+          </button>
+
+          <p class="info">Masz już konto? <a routerLink="/Login">Zaloguj się</a></p>
         </form>
-        <div class="photoContainer">
-            <p>Wybierz zdjęcie profilowe</p>
-            <label for="profilePicUpload" class="upload-label">
-              <mat-icon>image</mat-icon>
-              <input type="file" id="profilePicUpload" hidden />
-            </label>
         </div>
-        <button mat-button disabled class="custom-button">Zarejestruj się</button>
-        <p class="info">Masz już konto? <a href=""> Zaloguj się</a></p>
-    </div>
 </div>

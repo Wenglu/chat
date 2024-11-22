@@ -1,20 +1,28 @@
 <div class="container">
-    <div class="login">
+  <div class="login">
+    <form (ngSubmit)="SignIn($event)">
+      <mat-form-field class="custom-input">
+        <mat-label>Email</mat-label>
+        <input 
+        type="email" 
+        matInput 
+        [(ngModel)]="userData.email" 
+        name="email"> 
+      </mat-form-field>
 
-        <form>
-            <mat-form-field class="custom-input">
-              <mat-label>Email</mat-label>
-              <input type="email" matInput>         
-            </mat-form-field>
-        </form>
+      <mat-form-field class="custom-input">
+        <mat-label>Hasło</mat-label>
+        <input 
+        type="password" 
+        matInput 
+        [(ngModel)]="userData.password" 
+        name="password">
+      </mat-form-field>
 
-        <form>
-            <mat-form-field class="custom-input">
-              <mat-label>Hasło</mat-label>
-              <input type="text" matInput>         
-            </mat-form-field>
-        </form>
-        <button mat-button disabled class="custom-button">Zaloguj się</button>
-        <p class="info">Nie masz konta? <a routerLink="/Register"> Zarejestruj się</a></p>
-    </div>
+      <button mat-button type="submit" class="custom-button">
+        Zaloguj się
+      </button>
+    </form>
+    <p class="info">Nie masz konta? <a routerLink="/"> Zarejestruj się</a></p>
+  </div>
 </div>

@@ -4,7 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';   
 import { FormsModule } from '@angular/forms';
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, db, storage } from '../../../../firebase';
+import { auth, db, storage } from '../../../firebase';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";   
 import { Router,RouterLink } from '@angular/router';

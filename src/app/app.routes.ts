@@ -5,7 +5,7 @@ import { MainContainerAppComponent } from './components/main-container-app/main-
 
 export const routes: Routes = [
     {
-        path: 'Register',
+        path: '',
         component: AuthContainerComponent
     },
     {
