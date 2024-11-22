@@ -28,3 +28,9 @@
 ::ng-deep .mat-mdc-list-item-interactive::before {
   background-color: transparent !important;
 }
+.profilePhoto
+{
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+}
