@@ -1,9 +1,12 @@
-<div *ngFor="let message of displayedMessages; let i = index">
+<div *ngFor="let user of displayedMessages; let i = index">
   <mat-list-item [attr.data-index]="i" class="message-item">
-    <img matListItemAvatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFIpU4nDOSCE7gB1EY8onN7-QtU1_uf-e9KA&s">
-    <div matListItemTitle>{{message.name}}</div>
+    <img matListItemAvatar 
+         [src]="user.photoURL || 'https://static.vecteezy.com/system/resources/previews/005/129/844/non_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg'">
+    <div matListItemTitle>{{user.displayName}}</div>
     <div matListItemLine>visca barca</div>
     <div matListItemMeta>15:31</div>
   </mat-list-item>
   <mat-divider></mat-divider>
 </div>
+
+

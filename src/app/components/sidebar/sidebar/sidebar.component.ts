@@ -22,7 +22,6 @@ export class SidebarComponent {
     // Subscribe to userCredential$ to get the latest user credential data
      this.authContextService.userCredential$.subscribe((credential) => {
       this.userCredential = credential;
-      console.log (credential)
     });
   }
 }

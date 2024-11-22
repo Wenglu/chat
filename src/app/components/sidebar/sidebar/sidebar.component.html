@@ -4,8 +4,11 @@
       <mat-nav-list>
         <li mat-list-item class="nav-item">
           <div *ngIf="userCredential">
-            <img class="profilePhoto" [src]="userCredential?.photoURL" alt="User Photo" />
+            <img class="profilePhoto" 
+                 [src]="userCredential?.photoURL || 'https://static.vecteezy.com/system/resources/previews/005/129/844/non_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg'" 
+                 alt="User Photo" />
           </div>
+          
         </li>
         <li mat-list-item class="nav-item">
           <mat-icon>forum</mat-icon>
