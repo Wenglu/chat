@@ -3,6 +3,7 @@ import { MatListModule } from '@angular/material/list';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ConversationsService } from '../../../services/conversations.service';
+import { User } from '../../../models/user.ts';
 
 @Component({
   selector: 'app-conversation',
@@ -17,15 +18,15 @@ import { ConversationsService } from '../../../services/conversations.service';
 })
 export class ConversationComponent implements OnChanges {
   @Input() searchTerm: string = '';
-  @Input() filteredMessages: any[] = [];
+  @Input() filteredMessages: User[] = [];
 
-  allMessages: any[] = [];
-  displayedMessages: any[] = [];
+  allMessages: User[] = [];
+  displayedMessages: User[] = [];
   private conversationsService = inject(ConversationsService);
 
   ngOnInit() {
     this.loadMessages();
-  }
+    }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['filteredMessages']) {
@@ -37,15 +38,14 @@ export class ConversationComponent implements OnChanges {
     this.conversationsService.getMessages().subscribe({
       next: (messages) => {
         this.allMessages = messages;
-        this.displayedMessages = messages;
+        this.displayedMessages = this.filteredMessages.length > 0 
+          ? this.filteredMessages 
+          : messages;
+
       },
       error: (error) => {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching users:', error);
       },
     });
-
-    if (this.allMessages.length === 0) {
-      this.conversationsService.fetchMessages().subscribe();
-    }
   }
 }
