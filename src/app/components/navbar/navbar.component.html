@@ -1,7 +1,7 @@
 <div class="navbar">
     <div class="userData">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFIpU4nDOSCE7gB1EY8onN7-QtU1_uf-e9KA&s" alt="">
-        <p>User Name</p>
+        <img [src]="clickedUser?.photoURL || 'https://static.vecteezy.com/system/resources/previews/005/129/844/non_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg'">
+        <p>{{clickedUser?.displayName}}</p>
     </div>
     <div class="options">
         <mat-icon class="icon">videocam</mat-icon>

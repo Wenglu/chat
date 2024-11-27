@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
+import { AuthContextService } from '../../services/auth-context.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-navbar',
@@ -10,4 +12,13 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class NavbarComponent {
 
+  clickedUser: User | null = null;
+
+  constructor(private authContextService: AuthContextService) {}
+
+  ngOnInit() {
+    this.authContextService.clickedUser$.subscribe((user) => {
+      this.clickedUser = user;
+    });
+  }
 }

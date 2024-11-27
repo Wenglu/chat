@@ -4,6 +4,9 @@ import { NavbarComponent } from '../../../navbar/navbar.component';
 import { MatIcon } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { User } from '../../../../models/user';
+import { AuthContextService } from '../../../../services/auth-context.service';
+
 
 
 @Component({
@@ -14,5 +17,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   styleUrl: './messages.component.scss'
 })
 export class MessagesComponent {
+  clickedUser: User | null = null;
 
+  constructor(private authContextService: AuthContextService) {}
+
+  ngOnInit() {
+    this.authContextService.clickedUser$.subscribe((user) => {
+      this.clickedUser = user;
+    });
+  }
 }

@@ -3,7 +3,8 @@ import { MatListModule } from '@angular/material/list';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ConversationsService } from '../../../services/conversations.service';
-import { User } from '../../../models/user.ts';
+import { AuthContextService } from '../../../services/auth-context.service';
+import { User } from '../../../models/user';
 
 @Component({
   selector: 'app-conversation',
@@ -23,6 +24,8 @@ export class ConversationComponent implements OnChanges {
   allMessages: User[] = [];
   displayedMessages: User[] = [];
   private conversationsService = inject(ConversationsService);
+  private authContextService = inject(AuthContextService);
+
 
   ngOnInit() {
     this.loadMessages();
@@ -47,5 +50,10 @@ export class ConversationComponent implements OnChanges {
         console.error('Error fetching users:', error);
       },
     });
+  }
+  onUserClick(user: User) {
+    this.authContextService.chatCreating(user);
+    this.authContextService.getMessages(user);
+
   }
 }
