@@ -6,14 +6,21 @@ import { MainContainerAppComponent } from './components/main-container-app/main-
 export const routes: Routes = [
     {
         path: '',
-        component: AuthContainerComponent
+        loadComponent: () => 
+            import('./components/authorization-container/auth-container/auth-container.component')
+                .then((m) => m.AuthContainerComponent)
+        
     },
     {
         path: 'Login',
-        component: LoginContainerComponent
+        loadComponent: () => 
+            import('./components/authorization-container/auth-container/login-container/login-container/login-container.component')
+                .then((m) => m.LoginContainerComponent)
     },
     {
         path: 'MessageContainer',
-        component: MainContainerAppComponent,
+        loadComponent: () => 
+            import('./components/main-container-app/main-container-app.component')
+                .then((m) => m.MainContainerAppComponent)
         }
 ];
