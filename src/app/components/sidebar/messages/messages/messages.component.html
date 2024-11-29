@@ -3,37 +3,10 @@
 
     <div class="messages">
         <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-        <app-user-message></app-user-message>
-
-
     </div>
+
     <div class="inputContainer">
-        <input matInput placeholder="Napisz wiadomość..." type="text">
-               <mat-icon>keyboard_arrow_up</mat-icon>
+        <input matInput placeholder="Napisz wiadomość..." type="text" [(ngModel)]="messageContent" (keydown)="onKeydown($event)">
+        <mat-icon (click)="sendMessage()">keyboard_arrow_up</mat-icon>
     </div>
-
 </div>

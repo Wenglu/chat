@@ -1,12 +1,13 @@
 <div *ngFor="let user of displayedMessages; let i = index">
-  <mat-list-item [attr.data-index]="i" class="message-item" (click)="onUserClick(user)">
+  <mat-list-item 
+  [attr.data-index]="i" 
+  class="message-item"
+  (click)="onUserClick(user)">>
     <img matListItemAvatar 
          [src]="user.photoURL || 'https://static.vecteezy.com/system/resources/previews/005/129/844/non_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg'">
     <div matListItemTitle>{{user.displayName}}</div>
-    <div matListItemLine>visca barca</div>
-    <div matListItemMeta>15:31</div>
+    <div matListItemLine>{{getLastMessage(user)}}</div>
+    <div matListItemMeta>{{ getDate(user) }}</div>
   </mat-list-item>
   <mat-divider></mat-divider>
 </div>
-
-
