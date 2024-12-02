@@ -1,12 +1,14 @@
 <div class="container">
     <app-navbar></app-navbar>
 
-    <div class="messages">
+    <div class="messages" #messagesContainer>
         <app-user-message></app-user-message>
     </div>
 
     <div class="inputContainer">
-        <input matInput placeholder="Napisz wiadomość..." type="text" [(ngModel)]="messageContent" (keydown)="onKeydown($event)">
+        <input matInput placeholder="Napisz wiadomość..." type="text" 
+               [(ngModel)]="messageContent" 
+               (keydown)="onKeydown($event)">
         <mat-icon (click)="sendMessage()">keyboard_arrow_up</mat-icon>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { UserMessageComponent } from '../../../user-message/user-message.component';
 import { NavbarComponent } from '../../../navbar/navbar.component';
 import { MatIcon } from '@angular/material/icon';
@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 export class MessagesComponent {
   clickedUser: User | null = null;
   messageContent: string = '';
+  @ViewChild('messagesContainer') private messagesContainer!: ElementRef;
 
   constructor(private authContextService: AuthContextService) {}
 
@@ -27,6 +28,20 @@ export class MessagesComponent {
       this.clickedUser = user;
     });
   }
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  private scrollToBottom(): void {
+    try {
+      this.messagesContainer.nativeElement.scrollTop = 
+        this.messagesContainer.nativeElement.scrollHeight;
+    } catch(err) {
+      console.error('Scroll to bottom failed', err);
+    }
+  }
+
   onKeydown(event: KeyboardEvent): void {
     if (event.key === 'Enter') {
       this.sendMessage();
@@ -38,6 +53,7 @@ export class MessagesComponent {
       this.authContextService.sendMessage(this.messageContent, this.clickedUser)
         .then(() => {
           this.messageContent = ''; 
+          this.scrollToBottom();
         })
         .catch(err => {
           console.error("Error sending message:", err);
