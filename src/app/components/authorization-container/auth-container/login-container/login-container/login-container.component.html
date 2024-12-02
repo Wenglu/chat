@@ -18,6 +18,7 @@
         [(ngModel)]="userData.password" 
         name="password">
       </mat-form-field>
+      <div class="error-message" *ngIf="errorInfo">{{ errorInfo }}</div>
 
       <button mat-button type="submit" class="custom-button">
         Zaloguj się

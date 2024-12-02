@@ -40,6 +40,7 @@
                   name="password" 
                   required>
           </mat-form-field>
+          <div class="error-message" *ngIf="errorInfo">{{ errorInfo }}</div>
 
           <div class="photoContainer">
               <p>Wybierz zdjęcie profilowe</p>

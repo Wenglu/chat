@@ -7,12 +7,14 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from '../../../firebase';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";   
-import { Router,RouterLink } from '@angular/router';
+import { Router,RouterLink } from '@angular/router'
+import { CommonModule } from '@angular/common';
+import { error } from 'node:console';
 
 @Component({
   selector: 'app-auth-container',
   standalone: true,
-  imports: [MatInputModule, MatFormFieldModule, MatIcon, FormsModule,RouterLink],
+  imports: [MatInputModule,CommonModule, MatFormFieldModule, MatIcon, FormsModule,RouterLink],
   templateUrl: './auth-container.component.html',
   styleUrl: './auth-container.component.scss'
 })
@@ -35,9 +37,11 @@ export class AuthContainerComponent {
     this.userData.profilePicture = file;
   }
   
+  validation(){
+    
+  }
   async onSubmit(event: Event) {
     event.preventDefault();
-    
     try {
       // Create user with email and password
       const userCredential = await createUserWithEmailAndPassword(
@@ -81,8 +85,18 @@ export class AuthContainerComponent {
       console.log("User created successfully!");
 
     } catch (error: any) {
-      this.errorInfo = `Error creating user: ${error.message}`;
-      console.error('Error creating user:', error);
+      this.errorInfo = this.getFirebaseErrorMessage(error.code);
     }
+  }
+  private getFirebaseErrorMessage(code: string): string {
+    const errorMessages: { [key: string]: string } = {
+      'auth/email-already-in-use': 'Ten adres email jest już zajęty.',
+      'auth/invalid-email': 'Podaj poprawny adres email.',
+      'auth/operation-not-allowed': 'Rejestracja nie jest obecnie dostępna.',
+      'auth/weak-password': 'Hasło musi mieć przynajmniej 6 znaków.',
+      'auth/missing-password': 'Podaj hasło.',
+    };
+
+    return errorMessages[code] || 'Wystąpił błąd podczas rejestracji. Spróbuj ponownie.';
   }
 }
